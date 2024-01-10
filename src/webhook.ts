@@ -36,7 +36,7 @@ export async function lookup(): Promise<number> {
 			});
 		}
 		
-		const res = await fetch(`https://discord.com/api/webhooks/${CONFIG.webhook.id}/${CONFIG.webhook.token}`, {
+		await fetch(`https://discord.com/api/webhooks/${CONFIG.webhook.id}/${CONFIG.webhook.token}`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -46,8 +46,6 @@ export async function lookup(): Promise<number> {
 				embeds: embedList
 			})
 		});
-
-		console.log(await res.text());
 	}
 
 
